@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import './ContactForm.css';
-import Textarea from './Textarea';
-import Correct from './imgs/correct.svg';
-import X from './imgs/delete-button.svg';
-import contactWood from './imgs/woodFloor3.jpg'
+import "./ContactForm.css";
+import Textarea from "./Textarea";
+import Correct from "./imgs/correct.svg";
+import X from "./imgs/delete-button.svg";
+import contactWood from "./imgs/woodFloor3.jpg";
 
 import LazyHero from "react-lazy-hero";
 import WoodenBottom from "./imgs/woodBottom.jpg";
@@ -12,23 +12,23 @@ import brass from "./imgs/brassFix.jpg";
 import Girls from "./imgs/girls.jpg";
 
 class Contact extends Component {
+  state = {
+    userName: "",
+    email: "",
+    message: "",
+    submit: false
+  };
 
-  state = { userName: '',
-            email: '',
-            message: '',
-            submit: false,
-  }
+  setUserName = event => this.setState({ userName: event.target.value });
 
-  setUserName = event => this.setState({ userName: event.target.value })
-  
   setEmail = ({ target: { value } }) =>
     this.setState({
       email: value,
-      isEmailValid: value.includes('@' && '.' )
-    })
-  
-  setMessage = (event)=> this.setState({ message: event.target.value  });
-  setSubmit = (event)=> this.setState({ submit: event.target.value  });
+      isEmailValid: value.includes("@" && ".")
+    });
+
+  setMessage = event => this.setState({ message: event.target.value });
+  setSubmit = event => this.setState({ submit: event.target.value });
 
   render() {
     const { userName, email, message } = this.state;
@@ -46,8 +46,8 @@ class Contact extends Component {
 
         <div style={{ backgroundColor: "#D9CAB3" }}>
           <div className="WoodenBottom-container">
-            <img alt='' src={WoodenBottom} />
-            <img alt='' src={brass} className="home-brass" />
+            <img alt="" src={WoodenBottom} />
+            <img alt="" src={brass} className="home-brass" />
           </div>
 
           <div className="spacer" />
@@ -58,6 +58,8 @@ class Contact extends Component {
                 className="form-container"
                 style={{ backgroundImage: `url(${contactWood})` }}
               >
+                <div className="contact-spacer" />
+
                 <h1 className="form-header">Send us your message</h1>
 
                 <div className="emailInvalid" />
@@ -81,9 +83,9 @@ class Contact extends Component {
                     />
                     {!!this.state.email.length ? (
                       !!this.state.isEmailValid ? (
-                        <img alt='' src={Correct} />
+                        <img alt="" src={Correct} />
                       ) : (
-                        <img alt='' src={X} />
+                        <img alt="" src={X} />
                       )
                     ) : null}
                   </div>

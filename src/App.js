@@ -19,12 +19,8 @@ import Swipeout from "rc-swipeout";
 import "./rc-swipeout.css";
 import insta from "./imgs/insta.svg";
 import facebook from "./imgs/facebook.svg";
-<<<<<<< Updated upstream
 
-import { Logo } from 'capsloklogo';
-=======
-import Caps from "./imgs/CapsGrey.svg";
->>>>>>> Stashed changes
+import { Logo } from "capsloklogo";
 
 class App extends Component {
   state = {
@@ -34,10 +30,7 @@ class App extends Component {
   setMobileMenu = () =>
     this.setState({ sideMenuVisible: !this.state.sideMenuVisible });
 
-
-  
   render() {
-
     return (
       <Router>
         <div className="App">
@@ -62,9 +55,9 @@ class App extends Component {
                 <div
                   className={
                     "side-nav " +
-                      (this.state.sideMenuVisible
-                     ? "side-nav-does-show"
-                     : "side-nav-does-not-show")
+                    (this.state.sideMenuVisible
+                      ? "side-nav-does-show"
+                      : "side-nav-does-not-show")
                   }
                 >
                   <ul>
@@ -90,7 +83,7 @@ class App extends Component {
                     </li>
                     <li>
                       <NavLink to="/home">
-                        <img alt='' src={homelogo} />
+                        <img alt="" src={homelogo} />
                       </NavLink>
                     </li>
                   </ul>
@@ -133,7 +126,7 @@ class App extends Component {
           </div>
 
           <div className="header-background">
-            <img alt='' src={woodHeader} />
+            <img alt="" src={woodHeader} />
           </div>
 
           <div>
@@ -151,20 +144,20 @@ class App extends Component {
             <ul>
               <li>
                 <a href="/">
-                  <img alt='' src={insta} className="social-square insta" />
+                  <img alt="" src={insta} className="social-square insta" />
                 </a>
               </li>
               <li>
                 <a href="/">
-                  <img alt='' src={facebook} className="social-square face" />
+                  <img alt="" src={facebook} className="social-square face" />
                 </a>
               </li>
             </ul>
 
-            <div className='made-by'>
-              <p>                
+            <div className="made-by">
+              <p>
                 Made by
-                <Logo/>
+                <Logo />
               </p>
               <p>Watch us ball out on these mofos</p>
             </div>
